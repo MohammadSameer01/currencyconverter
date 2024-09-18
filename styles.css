@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 img {
   font-size: 0.3em;
@@ -70,15 +71,28 @@ header {
   z-index: 1;
   position: relative;
 }
-.heroTitle,
+
 .popularlyUsedCurrenciesIcons {
   display: none;
 }
-.optionImageClass {
-  background: red;
-  height: 45px;
-  width: 45px;
-  display: flex;
+
+.heroTitle {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+.heroTitle span {
+  background: linear-gradient(
+    90deg,
+    var(--themeBg),
+    var(--azul),
+    var(--pacific-cyan),
+    red 105%
+  );
+  font-size: 1.8em;
+  color: transparent;
+  background-clip: text;
 }
 .converterContainer {
   display: flex;
@@ -90,11 +104,14 @@ header {
   min-height: 250px;
   background: var(--themeText);
   color: black;
-  --borderRadius: 48px;
-  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  --borderRadius: 24px;
+  border-radius: var(--borderRadius) var(--borderRadius);
   flex-wrap: wrap;
   position: relative;
+  box-shadow: 0 0 24px -12px;
+  margin-bottom: 36px;
 }
+
 .converterContainer label {
   margin-bottom: 6px;
 }
@@ -159,10 +176,8 @@ header {
   width: 80%;
   border-radius: 6px;
   font-size: 1em;
-  /* background: var(--themeResult); */
   min-height: 50px;
   align-content: center;
-  flex: 1;
   margin: 12px;
 }
 .mainResult {
@@ -192,6 +207,8 @@ header {
   border-radius: 12px;
   color: var(--themeText);
   cursor: pointer;
+  position: sticky;
+  bottom: 6px;
 }
 .updatedTime {
   position: absolute;
@@ -306,8 +323,73 @@ header {
     url(assets/chinaFlag.svg);
 }
 
+/* SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3---- */
+.currenciesTableSection {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  background: var(--themeText);
+  padding: 48px;
+}
+.fromCurrenciesTableContainer,
+.toCurrenciesTableContainer {
+  width: 40%;
+  background: #fdfdfd;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 1px 1px 12px -8px, -1px -1px 12px -8px;
+}
+.currenciesTableSection h3 {
+  padding: 12px;
+  text-align: center;
+  font-weight: 400;
+  position: relative;
+  background: var(--themeBg);
+  color: var(--themeText);
+}
+table {
+  width: 100%;
+}
+table tr {
+  width: 100%;
+}
+table td:first-child {
+  color: var(--azul);
+}
+th {
+  font-weight: 500;
+  color: var(--gunmetal);
+}
+tr td,
+tr th {
+  padding: 12px;
+  text-align: center;
+  font-size: 1em;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
+  .currenciesTableSection {
+    padding: 24px;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: unset;
+    scroll-behavior: smooth;
+    gap: 24px;
+  }
+  .fromCurrenciesTableContainer,
+  .toCurrenciesTableContainer {
+    scroll-snap-align: center;
+    min-width: 90%;
+  }
+  tr td,
+  tr th {
+    padding: 6px;
+    font-size: 0.75em;
+  }
+
   .currencyConverterSection {
     padding-top: 0;
   }
@@ -315,12 +397,20 @@ header {
     flex-direction: column;
     width: 100%;
     --borderRadius: 24px;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    box-shadow: 0 0 0;
+    margin-bottom: unset;
   }
   .heroTitle {
     display: unset;
     padding: 12px;
     font-size: 1.5em;
     width: 100%;
+    margin-bottom: unset;
+  }
+  .heroTitle span {
+    font-size: unset;
+    display: block;
   }
   .popularlyUsedCurrenciesIcons {
     display: flex;
