@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
 
+    <link rel="icon" type="png" href="assets/exchange-rate.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!--  -->
     <header>
       <div class="logoCnt">
         <img src="assets/exchange-rate.png" alt="Currency Exchange logo" />
@@ -213,7 +216,7 @@
           <div class="resultDisplayer">
             <div class="mainResult">
               <div class="resultsFontSmall">0 USD =</div>
-              00.00000
+              00.00000 INR
             </div>
             <div class="valueOfFromCurrency">0 USD = 00.0000</div>
             <div class="valueOfToCurrency">0 INR = 00.0000</div>
@@ -222,8 +225,34 @@
           <button class="convertButton">Convert USD to INR</button>
         </div>
       </section>
+      <section class="currenciesTableSection">
+        <div class="fromCurrenciesTableContainer">
+          <table id="fromCurrTableID">
+            <h3 class="fromCurrH3">Convert USD to INR</h3>
+            <thead>
+              <tr>
+                <th class="fromCurrTableHead">USD</th>
+                <th class="toCurrTableHead">INR</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="toCurrenciesTableContainer">
+          <table id="toCurrTableID">
+            <h3 class="toCurrH3">Convert INR to USD</h3>
+            <thead>
+              <tr>
+                <th class="toCurrTableHead">INR</th>
+                <th class="fromCurrTableHead">USD</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
     </main>
-
+    <!--  -->
     <script>
       (function allImagesFunc() {
         let allImages = document.querySelectorAll("img");
@@ -234,6 +263,9 @@
         // UserInput only in numbers
         let userInput = document.querySelector("#userInput");
         userInput.value = 1;
+        setTimeout(() => {
+          exchangeRate();
+        }, 300);
         userInput.addEventListener("input", function () {
           this.value = this.value.replace(/[^0-9]/g, "");
         });
