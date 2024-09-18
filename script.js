@@ -75,7 +75,7 @@ function updateTables(fromCurr, toCurr) {
   let toCurrCode = toCurrency.value;
 
   let displayValues = [
-    1, 5, 10, 15, 25, 50, 100, 500, 1000, 5000, 1000, 5000, 10000,
+    1, 5, 10, 15, 25, 50, 100, 500, 1000, 5000, 10000,
   ];
 
   let fromDisplayValues = [];
