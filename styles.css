@@ -1,0 +1,392 @@
+:root {
+  --ffInter: "Inter", sans-serif;
+
+  --gunmetal: #182825ff;
+  --azul: #016fb9ff;
+  --pacific-cyan: #22aed1ff;
+  --air-force-blue: #6d8ea0ff;
+  --khaki: #afa98dff;
+
+  --borderColor: #999;
+
+  --gradient1: rgba(0, 0, 0, 0.7);
+  --gradient2: rgba(0, 0, 0, 0.9);
+
+  --themeBg: #091263;
+  --themeText: #fff;
+  --themeResult: #90ee90;
+  --gray: gray;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  font-size: 0.3em;
+}
+label {
+  font-weight: 500;
+}
+.colorHighlight {
+  color: var(--azul);
+}
+
+body {
+  height: 100vh;
+  font-family: var(--ffInter);
+}
+header {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  background: var(--themeBg);
+  color: var(--themeText);
+  position: sticky;
+  top: 0;
+  z-index: -1;
+}
+.logoCnt {
+  height: 70%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.logoCnt img {
+  height: 100%;
+  padding: 4px;
+}
+
+/* MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN----MAIN---- */
+
+.currencyConverterSection {
+  display: grid;
+  background: var(--themeBg);
+  color: var(--themeText);
+  padding-top: 24px;
+  z-index: 1;
+  position: relative;
+}
+.heroTitle,
+.popularlyUsedCurrenciesIcons {
+  display: none;
+}
+.optionImageClass {
+  background: red;
+  height: 45px;
+  width: 45px;
+  display: flex;
+}
+.converterContainer {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  justify-content: space-evenly;
+  padding: 12px;
+  min-height: 250px;
+  background: var(--themeText);
+  color: black;
+  --borderRadius: 48px;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  flex-wrap: wrap;
+  position: relative;
+}
+.converterContainer label {
+  margin-bottom: 6px;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  padding: 8px;
+}
+
+.inputContainer input[type="text"] {
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid var(--borderColor);
+  background: transparent;
+}
+.dropdownsContainer {
+  display: flex;
+  width: 66%;
+}
+.dropdownCnt {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 8px;
+}
+.dropdownCnt select {
+  border: none;
+  outline: none;
+  font-family: var(--ffInter);
+  font-size: 1em;
+  padding: 8px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid var(--borderColor);
+  padding-left: 55px;
+  cursor: pointer;
+  background: transparent;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("assets/dropDownIcon.png");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 24px;
+}
+.selectedCurrFlag {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  padding: 4px;
+  transform: translate(6px, 25px);
+}
+
+.resultDisplayer {
+  padding: 12px;
+  width: 80%;
+  border-radius: 6px;
+  font-size: 1em;
+  /* background: var(--themeResult); */
+  min-height: 50px;
+  align-content: center;
+  flex: 1;
+  margin: 12px;
+}
+.mainResult {
+  font-size: 3em;
+  line-break: anywhere;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.resultsFontSmall {
+  font-size: 0.5em;
+  color: var(--gray);
+  padding: 4px 0;
+}
+.valueOfFromCurrency,
+.valueOfToCurrency {
+  font-size: 0.9em;
+  color: var(--gray);
+  padding: 2px;
+}
+.convertButton {
+  border: 1px solid var(--borderColor);
+  font-family: var(--ffInter);
+  padding: 12px;
+  font-size: 1em;
+  min-width: 160px;
+  background: var(--azul);
+  border-radius: 12px;
+  color: var(--themeText);
+  cursor: pointer;
+}
+.updatedTime {
+  position: absolute;
+  bottom: 12px;
+  right: 60px;
+  font-size: 0.85em;
+  color: var(--borderColor);
+}
+/* EXCHANGE RATES */
+.exchageRatesSection {
+  display: grid;
+  padding: 24px 12px;
+  padding-top: 36px;
+  background: var(--themeBg);
+  color: var(--themeText);
+  position: sticky;
+  top: 65px;
+  z-index: 1;
+}
+.usDollarCnt {
+  font-size: 0.7em;
+  margin-top: 6px;
+}
+.usDollarCnt span {
+  color: var(--themeResult);
+}
+.ratesDisplayerCnt {
+  display: flex;
+  overflow: auto;
+  gap: 24px;
+  padding-bottom: 12px;
+}
+
+.currencyRateContainer {
+  height: 110px;
+  aspect-ratio: 3/2;
+  padding: 6px;
+  border-radius: 12px;
+  display: flex;
+  position: relative;
+  color: var(--themeText);
+  background: #000;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.currencySymbol {
+  width: 25%;
+  height: 50%;
+  padding: 8px;
+  position: absolute;
+  right: 6px;
+}
+.currencySymbol svg {
+  width: 100%;
+  height: 100%;
+  fill: white;
+}
+
+.currencyRate {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 4px;
+}
+.currencyRate p {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.75);
+}
+.currencyRate div {
+  font-size: 2em;
+}
+
+.currencyRateContainer:nth-child(1) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/indiaFlag.svg);
+}
+.currencyRateContainer:nth-child(2) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/europeFlag.svg);
+}
+.currencyRateContainer:nth-child(3) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/japanFlag.svg);
+  background-size: cover;
+}
+.currencyRateContainer:nth-child(4) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/unitedKingdomFlag.svg);
+}
+.currencyRateContainer:nth-child(5) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/australiaFlag.svg);
+}
+.currencyRateContainer:nth-child(6) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/canadaFlag.svg);
+}
+.currencyRateContainer:nth-child(7) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/switzerlandFlag.svg);
+}
+.currencyRateContainer:nth-child(8) {
+  background: linear-gradient(var(--gradient1), var(--gradient2)),
+    url(assets/chinaFlag.svg);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  .currencyConverterSection {
+    padding-top: 0;
+  }
+  .converterContainer {
+    flex-direction: column;
+    width: 100%;
+    --borderRadius: 24px;
+  }
+  .heroTitle {
+    display: unset;
+    padding: 12px;
+    font-size: 1.5em;
+    width: 100%;
+  }
+  .popularlyUsedCurrenciesIcons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 12px 0;
+  }
+  .popularlyUsedCurrenciesIcons div {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    background: var(--gunmetal);
+    fill: var(--themeText);
+  }
+  .popularlyUsedCurrenciesIcons svg {
+    height: 100%;
+    width: 100%;
+  }
+  .inputContainer {
+    width: 100%;
+  }
+  .dropdownsContainer {
+    width: 100%;
+  }
+
+  .currencyRate p {
+    font-size: 0.6em;
+  }
+  .currencyRate div {
+    font-size: 1.5em;
+  }
+  .ratesDisplayerCnt {
+    gap: 12px;
+  }
+
+  .resultDisplayer {
+    min-width: 96%;
+    margin: 12px 0;
+    padding: 6px;
+  }
+  .mainResult {
+    font-size: 2.5em;
+  }
+  .resultsFontSmall {
+    font-size: 0.4em;
+  }
+  .valueOfFromCurrency,
+  .valueOfToCurrency {
+    font-size: 0.8em;
+  }
+  .convertButton {
+    margin-top: 16px;
+    border-radius: 8px;
+  }
+  .updatedTime {
+    bottom: 64px;
+    left: 24px;
+    font-size: 0.75em;
+    text-align: right;
+    width: 90%;
+    margin-bottom: 6px;
+  }
+}
+@media screen and (max-width: 325px) {
+  .dropdownsContainer {
+    flex-direction: column;
+  }
+}

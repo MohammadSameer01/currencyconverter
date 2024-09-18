@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logoCnt">
+        <img src="assets/exchange-rate.png" alt="Currency Exchange logo" />
+        <div class="documentTitle">Currency Converter</div>
+      </div>
+    </header>
+    <main>
+      <section class="exchageRatesSection">
+        <div class="ratesDisplayerCnt">
+          <div class="currencyRateContainer">
+            <div class="currencySymbol">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M0 64C0 46.3 14.3 32 32 32l64 0 16 0 176 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-56.2 0c9.6 14.4 16.7 30.6 20.7 48l35.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-35.6 0c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c32.8 0 61-19.7 73.3-48L32 208c-17.7 0-32-14.3-32-32s14.3-32 32-32l153.3 0C173 115.7 144.8 96 112 96L96 96 32 96C14.3 96 0 81.7 0 64z"
+                />
+              </svg>
+            </div>
+            <div class="currencyRate">
+              <p>INR</p>
+              <p>Indian Rupee</p>
+              <div class="rupeeCurrentPrice">00.00</div>
+              <p>India</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencySymbol">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M48.1 240c-.1 2.7-.1 5.3-.1 8l0 16c0 2.7 0 5.3 .1 8L32 272c-17.7 0-32 14.3-32 32s14.3 32 32 32l28.3 0C89.9 419.9 170 480 264 480l24 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-24 0c-57.9 0-108.2-32.4-133.9-80L256 336c17.7 0 32-14.3 32-32s-14.3-32-32-32l-143.8 0c-.1-2.6-.2-5.3-.2-8l0-16c0-2.7 .1-5.4 .2-8L256 240c17.7 0 32-14.3 32-32s-14.3-32-32-32l-125.9 0c25.7-47.6 76-80 133.9-80l24 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-24 0C170 32 89.9 92.1 60.3 176L32 176c-17.7 0-32 14.3-32 32s14.3 32 32 32l16.1 0z"
+                />
+              </svg>
+            </div>
+            <div class="currencyRate">
+              <p>EUR</p>
+              <p>Euro</p>
+              <div class="euroCurrentPrice">00.00</div>
+              <p>Eurozone (Germany, France, Italy, Spain, etc.)</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencySymbol">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M58.6 46.3C48.8 31.5 29 27.6 14.2 37.4S-4.4 67 5.4 81.8L100.2 224 48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l80 0 0 32-80 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l80 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 80 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-80 0 0-32 80 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-52.2 0L314.6 81.8c9.8-14.7 5.8-34.6-8.9-44.4s-34.6-5.8-44.4 8.9L160 198.3 58.6 46.3z"
+                />
+              </svg>
+            </div>
+            <div class="currencyRate">
+              <p>JPY</p>
+              <p>Japanese Yen</p>
+              <div class="yenCurrentPrice">00.00</div>
+              <p>Japan</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencySymbol">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M112 160.4c0-35.5 28.8-64.4 64.4-64.4c6.9 0 13.8 1.1 20.4 3.3l81.2 27.1c16.8 5.6 34.9-3.5 40.5-20.2s-3.5-34.9-20.2-40.5L217 38.6c-13.1-4.4-26.8-6.6-40.6-6.6C105.5 32 48 89.5 48 160.4L48 224l-16 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l16 0 0 44.5c0 17.4-4.7 34.5-13.7 49.4L4.6 431.5c-5.9 9.9-6.1 22.2-.4 32.2S20.5 480 32 480l256 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L88.5 416l.7-1.1C104.1 390 112 361.5 112 332.5l0-44.5 112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-112 0 0-63.6z"
+                />
+              </svg>
+            </div>
+            <div class="currencyRate">
+              <p>GBP</p>
+              <p>British Pound</p>
+              <div class="poundCurrentPrice">00.00</div>
+              <p>United Kingdom</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencyRate">
+              <p>AUD</p>
+              <p>Australian Dollar</p>
+              <div class="ausDollarCurrentPrice">00.00</div>
+              <p>Australia</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencyRate">
+              <p>CAD</p>
+              <p>Canadian Dollar</p>
+              <div class="canDollarCurrentPrice">00.00</div>
+              <p>Canada</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencyRate">
+              <p>CHF</p>
+              <p>Swiss Franc</p>
+              <div class="swissFrancCurrentPrice">00.00</div>
+              <p>Switzerland</p>
+            </div>
+          </div>
+          <div class="currencyRateContainer">
+            <div class="currencySymbol">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M58.6 46.3C48.8 31.5 29 27.6 14.2 37.4S-4.4 67 5.4 81.8L100.2 224 48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l80 0 0 32-80 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l80 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 80 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-80 0 0-32 80 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-52.2 0L314.6 81.8c9.8-14.7 5.8-34.6-8.9-44.4s-34.6-5.8-44.4 8.9L160 198.3 58.6 46.3z"
+                />
+              </svg>
+            </div>
+            <div class="currencyRate">
+              <p>CNY</p>
+              <p>Chinese Yuan</p>
+              <div class="chineseYuanCurrentPrice">00.00</div>
+              <p>China</p>
+            </div>
+          </div>
+        </div>
+        <div class="usDollarCnt">
+          <p>
+            Above are the exchange rates of US Dollar($) with other currencies
+            as of date <span>00-00-0000</span>
+          </p>
+        </div>
+      </section>
+      <section class="currencyConverterSection">
+        <div class="converterContainer">
+          <h1 class="heroTitle">
+            <span class="colorHighlight">Convert Currencies</span> Instantly
+            with Ease!
+          </h1>
+          <div class="popularlyUsedCurrenciesIcons">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M0 64C0 46.3 14.3 32 32 32l64 0 16 0 176 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-56.2 0c9.6 14.4 16.7 30.6 20.7 48l35.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-35.6 0c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c32.8 0 61-19.7 73.3-48L32 208c-17.7 0-32-14.3-32-32s14.3-32 32-32l153.3 0C173 115.7 144.8 96 112 96L96 96 32 96C14.3 96 0 81.7 0 64z"
+                />
+              </svg>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M160 0c17.7 0 32 14.3 32 32l0 35.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11l0 33.4c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-34.9c-.4-.1-.9-.1-1.3-.2l-.2 0s0 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7s0 0 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11L128 32c0-17.7 14.3-32 32-32z"
+                />
+              </svg>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M48.1 240c-.1 2.7-.1 5.3-.1 8l0 16c0 2.7 0 5.3 .1 8L32 272c-17.7 0-32 14.3-32 32s14.3 32 32 32l28.3 0C89.9 419.9 170 480 264 480l24 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-24 0c-57.9 0-108.2-32.4-133.9-80L256 336c17.7 0 32-14.3 32-32s-14.3-32-32-32l-143.8 0c-.1-2.6-.2-5.3-.2-8l0-16c0-2.7 .1-5.4 .2-8L256 240c17.7 0 32-14.3 32-32s-14.3-32-32-32l-125.9 0c25.7-47.6 76-80 133.9-80l24 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-24 0C170 32 89.9 92.1 60.3 176L32 176c-17.7 0-32 14.3-32 32s14.3 32 32 32l16.1 0z"
+                />
+              </svg>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M112 160.4c0-35.5 28.8-64.4 64.4-64.4c6.9 0 13.8 1.1 20.4 3.3l81.2 27.1c16.8 5.6 34.9-3.5 40.5-20.2s-3.5-34.9-20.2-40.5L217 38.6c-13.1-4.4-26.8-6.6-40.6-6.6C105.5 32 48 89.5 48 160.4L48 224l-16 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l16 0 0 44.5c0 17.4-4.7 34.5-13.7 49.4L4.6 431.5c-5.9 9.9-6.1 22.2-.4 32.2S20.5 480 32 480l256 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L88.5 416l.7-1.1C104.1 390 112 361.5 112 332.5l0-44.5 112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-112 0 0-63.6z"
+                />
+              </svg>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M58.6 46.3C48.8 31.5 29 27.6 14.2 37.4S-4.4 67 5.4 81.8L100.2 224 48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l80 0 0 32-80 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l80 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 80 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-80 0 0-32 80 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-52.2 0L314.6 81.8c9.8-14.7 5.8-34.6-8.9-44.4s-34.6-5.8-44.4 8.9L160 198.3 58.6 46.3z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="inputContainer">
+            <label for="userInput">Amount</label>
+            <input type="text" id="userInput" />
+          </div>
+          <div class="dropdownsContainer">
+            <div class="fromCurrencyContainer dropdownCnt">
+              <label for="fromDropdown">From</label>
+              <img
+                src="https://flagsapi.com/US/flat/64.png"
+                class="selectedCurrFlag"
+                alt="Country Image"
+              />
+              <select name="from" id="fromDropdown"></select>
+            </div>
+
+            <div class="toCurrencyContainer dropdownCnt">
+              <label for="toDropdown">To</label>
+              <img
+                src="https://flagsapi.com/IN/flat/64.png"
+                class="selectedCurrFlag"
+                alt="Country Image"
+              />
+              <select name="to" id="toDropdown"></select>
+            </div>
+            <!--  -->
+          </div>
+          <div class="resultDisplayer">
+            <div class="mainResult">
+              <div class="resultsFontSmall">0 USD =</div>
+              00.00000
+            </div>
+            <div class="valueOfFromCurrency">0 USD = 00.0000</div>
+            <div class="valueOfToCurrency">0 INR = 00.0000</div>
+          </div>
+          <div class="updatedTime">Last Updated : <span>00-00-0000</span></div>
+          <button class="convertButton">Convert USD to INR</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function allImagesFunc() {
+        let allImages = document.querySelectorAll("img");
+        for (images of allImages) {
+          images.setAttribute("loading", "lazy");
+        }
+
+        // UserInput only in numbers
+        let userInput = document.querySelector("#userInput");
+        userInput.value = 1;
+        userInput.addEventListener("input", function () {
+          this.value = this.value.replace(/[^0-9]/g, "");
+        });
+      })();
+    </script>
+    <script>
+      (async function currenciesPrices() {
+        let rupeeCnt = document.querySelector(".rupeeCurrentPrice");
+        let euroCnt = document.querySelector(".euroCurrentPrice");
+        let japaneseYenCnt = document.querySelector(".yenCurrentPrice");
+        let britishPoundCnt = document.querySelector(".poundCurrentPrice");
+        let australianDollarCnt = document.querySelector(
+          ".ausDollarCurrentPrice"
+        );
+        let canadianDollarCnt = document.querySelector(
+          ".canDollarCurrentPrice"
+        );
+        let swissFrancCnt = document.querySelector(".swissFrancCurrentPrice");
+        let chineseYuanCnt = document.querySelector(".chineseYuanCurrentPrice");
+
+        let inrApiUrl =
+          "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
+
+        let response = await fetch(inrApiUrl);
+        let result = await response.json();
+
+        let currenciesRates = [];
+        for (currencies in result.usd) {
+          if (
+            currencies === "inr" ||
+            currencies === "eur" ||
+            currencies === "jpy" ||
+            currencies === "gbp" ||
+            currencies === "aud" ||
+            currencies === "cad" ||
+            currencies === "chf" ||
+            currencies === "cny"
+          ) {
+            currenciesRates.push({ [currencies]: result.usd[currencies] });
+          }
+        }
+
+        {
+          let dateDisplayer = document.querySelector(".usDollarCnt span");
+
+          let date = new Date(result.date);
+          let options = { year: "numeric", month: "long", day: "numeric" };
+          let formattedDate = date.toLocaleDateString("en-US", options);
+
+          dateDisplayer.innerText = formattedDate;
+
+          let converterInnerDateDisplyer =
+            document.querySelector(".updatedTime span");
+          converterInnerDateDisplyer.innerText = result.date;
+        }
+
+        //
+        rupeeCnt.innerText = Math.round(currenciesRates[6].inr * 1000) / 1000;
+
+        euroCnt.innerText = Math.round(currenciesRates[4].eur * 1000) / 1000;
+
+        japaneseYenCnt.innerText =
+          Math.round(currenciesRates[7].jpy * 1000) / 1000;
+
+        britishPoundCnt.innerText =
+          Math.round(currenciesRates[5].gbp * 1000) / 1000;
+
+        australianDollarCnt.innerText =
+          Math.round(currenciesRates[0].aud * 1000) / 1000;
+
+        canadianDollarCnt.innerText =
+          Math.round(currenciesRates[1].cad * 1000) / 1000;
+
+        swissFrancCnt.innerText =
+          Math.round(currenciesRates[2].chf * 1000) / 1000;
+
+        chineseYuanCnt.innerText =
+          Math.round(currenciesRates[3].cny * 1000) / 1000;
+      })();
+    </script>
+    <script src="currenciesCodes.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
