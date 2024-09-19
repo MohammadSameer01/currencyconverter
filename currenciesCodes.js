@@ -1,4 +1,4 @@
-const countryList = {
+  const countryList = {
   AED: "AE",
   AFN: "AF",
   XCD: "AG",
@@ -158,4 +158,144 @@ const countryList = {
   ZAR: "ZA",
   ZMK: "ZM",
   ZWD: "ZW",
+};
+
+const currencySymbols = {
+  AED: "د.إ", // United Arab Emirates Dirham
+  AFN: "؋", // Afghan Afghani
+  XCD: "$", // East Caribbean Dollar
+  ALL: "L", // Albanian Lek
+  AMD: "֏", // Armenian Dram
+  ANG: "ƒ", // Netherlands Antillean Guilder
+  AOA: "Kz", // Angolan Kwanza
+  ARS: "$", // Argentine Peso
+  AUD: "$", // Australian Dollar
+  AZN: "₼", // Azerbaijani Manat
+  BAM: "KM", // Bosnia-Herzegovina Convertible Mark
+  BBD: "$", // Barbadian Dollar
+  BDT: "৳", // Bangladeshi Taka
+  XOF: "CFA", // West African CFA Franc
+  BGN: "лв", // Bulgarian Lev
+  BHD: ".د.ب", // Bahraini Dinar
+  BIF: "FBu", // Burundian Franc
+  BMD: "$", // Bermudian Dollar
+  BND: "$", // Brunei Dollar
+  BOB: "Bs.", // Bolivian Boliviano
+  BRL: "R$", // Brazilian Real
+  BSD: "$", // Bahamian Dollar
+  CAD: "$", // Canadian Dollar
+  CHF: "CHF", // Swiss Franc
+  CLP: "$", // Chilean Peso
+  CNY: "¥", // Chinese Yuan
+  COP: "$", // Colombian Peso
+  CRC: "₡", // Costa Rican Colón
+  CUP: "₱", // Cuban Peso
+  CZK: "Kč", // Czech Koruna
+  DKK: "kr", // Danish Krone
+  DOP: "RD$", // Dominican Peso
+  DZD: "د.ج", // Algerian Dinar
+  EGP: "£", // Egyptian Pound
+  EUR: "€", // Euro
+  FJD: "$", // Fijian Dollar
+  GBP: "£", // British Pound Sterling
+  GHS: "₵", // Ghanaian Cedi
+  GIP: "£", // Gibraltar Pound
+  HKD: "$", // Hong Kong Dollar
+  HUF: "Ft", // Hungarian Forint
+  IDR: "Rp", // Indonesian Rupiah
+  ILS: "₪", // Israeli New Shekel
+  INR: "₹", // Indian Rupee
+  JPY: "¥", // Japanese Yen
+  KES: "KSh", // Kenyan Shilling
+  KRW: "₩", // South Korean Won
+  KWD: "د.ك", // Kuwaiti Dinar
+  LKR: "Rs", // Sri Lankan Rupee
+  MAD: "د.م.", // Moroccan Dirham
+  MXN: "$", // Mexican Peso
+  MYR: "RM", // Malaysian Ringgit
+  NGN: "₦", // Nigerian Naira
+  NOK: "kr", // Norwegian Krone
+  NZD: "$", // New Zealand Dollar
+  PHP: "₱", // Philippine Peso
+  PLN: "zł", // Polish Zloty
+  QAR: "﷼", // Qatari Riyal
+  RUB: "₽", // Russian Ruble
+  SAR: "﷼", // Saudi Riyal
+  SEK: "kr", // Swedish Krona
+  SGD: "$", // Singapore Dollar
+  THB: "฿", // Thai Baht
+  TRY: "₺", // Turkish Lira
+  USD: "$", // US Dollar
+  ZAR: "R", // South African Rand
+  VND: "₫", // Vietnamese Dong
+};
+
+const currencyNames = {
+  AED: "United Arab Emirates Dirham",
+  AFN: "Afghan Afghani",
+  XCD: "East Caribbean Dollar",
+  ALL: "Albanian Lek",
+  AMD: "Armenian Dram",
+  ANG: "Netherlands Antillean Guilder",
+  AOA: "Angolan Kwanza",
+  ARS: "Argentine Peso",
+  AUD: "Australian Dollar",
+  AZN: "Azerbaijani Manat",
+  BAM: "Bosnia-Herzegovina Convertible Mark",
+  BBD: "Barbadian Dollar",
+  BDT: "Bangladeshi Taka",
+  XOF: "West African CFA Franc",
+  BGN: "Bulgarian Lev",
+  BHD: "Bahraini Dinar",
+  BIF: "Burundian Franc",
+  BMD: "Bermudian Dollar",
+  BND: "Brunei Dollar",
+  BOB: "Bolivian Boliviano",
+  BRL: "Brazilian Real",
+  BSD: "Bahamian Dollar",
+  CAD: "Canadian Dollar",
+  CHF: "Swiss Franc",
+  CLP: "Chilean Peso",
+  CNY: "Chinese Yuan",
+  COP: "Colombian Peso",
+  CRC: "Costa Rican Colón",
+  CUP: "Cuban Peso",
+  CZK: "Czech Koruna",
+  DKK: "Danish Krone",
+  DOP: "Dominican Peso",
+  DZD: "Algerian Dinar",
+  EGP: "Egyptian Pound",
+  EUR: "Euro",
+  FJD: "Fijian Dollar",
+  GBP: "British Pound Sterling",
+  GHS: "Ghanaian Cedi",
+  GIP: "Gibraltar Pound",
+  HKD: "Hong Kong Dollar",
+  HUF: "Hungarian Forint",
+  IDR: "Indonesian Rupiah",
+  ILS: "Israeli New Shekel",
+  INR: "Indian Rupee",
+  JPY: "Japanese Yen",
+  KES: "Kenyan Shilling",
+  KRW: "South Korean Won",
+  KWD: "Kuwaiti Dinar",
+  LKR: "Sri Lankan Rupee",
+  MAD: "Moroccan Dirham",
+  MXN: "Mexican Peso",
+  MYR: "Malaysian Ringgit",
+  NGN: "Nigerian Naira",
+  NOK: "Norwegian Krone",
+  NZD: "New Zealand Dollar",
+  PHP: "Philippine Peso",
+  PLN: "Polish Zloty",
+  QAR: "Qatari Riyal",
+  RUB: "Russian Ruble",
+  SAR: "Saudi Riyal",
+  SEK: "Swedish Krona",
+  SGD: "Singapore Dollar",
+  THB: "Thai Baht",
+  TRY: "Turkish Lira",
+  USD: "United States Dollar",
+  ZAR: "South African Rand",
+  VND: "Vietnamese Dong",
 };
