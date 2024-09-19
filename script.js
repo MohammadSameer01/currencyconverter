@@ -3,6 +3,7 @@ let convertButton = document.querySelector(".convertButton");
 let fromCurrency = document.querySelector("#fromDropdown");
 let toCurrency = document.querySelector("#toDropdown");
 let resultDisplayer = document.querySelector(".resultDisplayer");
+let errorDisplayerCnt = document.querySelector(".errorDisplayerCnt");
 
 for (select of dropdowns) {
   for (currencyCode in countryList) {
@@ -19,6 +20,8 @@ for (select of dropdowns) {
   }
   select.addEventListener("change", (event) => {
     updateFlag(event.target);
+    exchangeRate();
+    isoCodeChanger();
   });
 }
 
@@ -35,11 +38,43 @@ function updateFlag(element) {
 }
 
 const exchangeRate = async () => {
-  let apiUrl = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies`;
+  let backupApiUrl = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies`;
+
+  let apiUrl = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@`;
+
   let userInput = document.querySelector("#userInput").value;
 
-  userInputApiRequest = `${apiUrl}/${fromCurrency.value.toLowerCase()}.json`;
-  let apiResponse = await fetch(userInputApiRequest);
+  userInputApiRequest = `${apiUrl}${todayDate}/v1/currencies/${fromCurrency.value.toLowerCase()}.json`;
+  backupApiUrlRequest = `${backupApiUrl}/${fromCurrency.value.toLowerCase()}.json`;
+
+  let apiResponse;
+
+  try {
+    apiResponse = await fetch(userInputApiRequest);
+    if (!apiResponse.ok) {
+      errorDisplayerCnt.innerText =
+        "Failed to fetch Primary API,You can still continue with our backup API";
+      errorDisplayerCnt.setAttribute("class", "newErrorClass");
+
+      throw new Error("Primary API request failed");
+    }
+  } catch (error) {
+    console.error("Error fetching from primary API:", error);
+
+    try {
+      apiResponse = await fetch(backupApiUrlRequest);
+      if (!apiResponse.ok) {
+        throw new Error("Backup URL request failed");
+      }
+    } catch (backupError) {
+      console.error("Error fetching from backup API:", backupError);
+      errorDisplayerCnt.innerText = `Failed to fetch both API's`;
+      errorDisplayerCnt.setAttribute("class", "newErrorClass");
+
+      return;
+    }
+  }
+
   let apiResponseJson = await apiResponse.json();
 
   let rate =
@@ -55,18 +90,30 @@ const exchangeRate = async () => {
 
   let finalResult = userInput * rate;
 
+  let fromCurrencyNameInFull = currencyNames[fromCurrency.value];
+  let toCurrencyNameInFull = currencyNames[toCurrency.value];
+
+  if (fromCurrencyNameInFull === undefined) {
+    fromCurrencyNameInFull = fromCurrency.value;
+  }
+  if (toCurrencyNameInFull === undefined) {
+    toCurrencyNameInFull = toCurrency.value;
+  }
+
   resultDisplayer.innerHTML = `
-  <div class='mainResult'><div class='resultsFontSmall'>${userInput} ${fromCurrency.value} = </div> 
-  ${finalResult} ${toCurrency.value}</div>
+  <div class='mainResult'><div class='resultsFontSmall'>${userInput} ${fromCurrencyNameInFull} = </div> 
+  ${finalResult} ${toCurrencyNameInFull}</div>
   <div class = 'valueOfFromCurrency'>1 ${fromCurrency.value} = ${rate} ${toCurrency.value}</div>
   <div  class = 'valueOfToCurrency'>1 ${toCurrency.value} = ${exchangeRateOfToCurrencytoFromCurrency} ${fromCurrency.value}</div>`;
 
-  updateTables(rate, 1 / rate);
-};
+  let converterInnerDateDisplyer = document.querySelector(".updatedTime span");
+  converterInnerDateDisplyer.innerText = apiResponseJson.date;
 
-convertButton.addEventListener("click", () => {
-  exchangeRate();
-});
+  updateTables(rate, 1 / rate);
+
+  errorDisplayerCnt.innerText = "";
+  errorDisplayerCnt.setAttribute("class", "errorDisplayerCnt");
+};
 
 function updateTables(fromCurr, toCurr) {
   fromCurr = Math.round(fromCurr * 1000) / 1000;
@@ -74,9 +121,7 @@ function updateTables(fromCurr, toCurr) {
   let fromCurrCode = fromCurrency.value;
   let toCurrCode = toCurrency.value;
 
-  let displayValues = [
-    1, 5, 10, 15, 25, 50, 100, 500, 1000, 5000, 10000,
-  ];
+  let displayValues = [1, 5, 10, 15, 25, 50, 100, 500, 1000, 5000, 10000];
 
   let fromDisplayValues = [];
   let toDisplayValues = [];
@@ -146,3 +191,21 @@ function updateTables(fromCurr, toCurr) {
     }
   }
 }
+
+function isoCodeChanger() {
+  let isoCodeDisplayer = document.querySelector(".inputISOCode");
+
+  let fromCurrencyISOCode = currencySymbols[fromCurrency.value];
+
+  if (fromCurrencyISOCode == undefined) {
+    isoCodeDisplayer.innerText = "";
+    document.querySelector("#userInput").style.paddingLeft = "8px";
+  } else {
+    isoCodeDisplayer.innerText = fromCurrencyISOCode;
+    document.querySelector("#userInput").style.paddingLeft = "";
+  }
+}
+
+convertButton.addEventListener("click", () => {
+  exchangeRate();
+});
