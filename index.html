@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
 
-    <link rel="icon" type="png" href="assets/exchange-rate.png" />
+    <link rel="icon" type="png" href="assets/favicon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
     <!--  -->
     <header>
       <div class="logoCnt">
-        <img src="assets/exchange-rate.png" alt="Currency Exchange logo" />
+        <img src="assets/logo.png" alt="Currency Exchange logo" />
         <div class="documentTitle">Currency Converter</div>
       </div>
     </header>
@@ -140,6 +140,7 @@
         </div>
       </section>
       <section class="currencyConverterSection">
+        <div class="errorDisplayerCnt"></div>
         <div class="converterContainer">
           <h1 class="heroTitle">
             <span class="colorHighlight">Convert Currencies</span> Instantly
@@ -189,6 +190,7 @@
           </div>
           <div class="inputContainer">
             <label for="userInput">Amount</label>
+            <div class="inputISOCode">$</div>
             <input type="text" id="userInput" />
           </div>
           <div class="dropdownsContainer">
@@ -272,6 +274,14 @@
       })();
     </script>
     <script>
+      // TODAY DATE
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+      const day = today.getDate();
+
+      const todayDate = `${year}.${month}.${day}`;
+      //
       (async function currenciesPrices() {
         let rupeeCnt = document.querySelector(".rupeeCurrentPrice");
         let euroCnt = document.querySelector(".euroCurrentPrice");
@@ -286,8 +296,10 @@
         let swissFrancCnt = document.querySelector(".swissFrancCurrentPrice");
         let chineseYuanCnt = document.querySelector(".chineseYuanCurrentPrice");
 
-        let inrApiUrl =
-          "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
+        // let inrApiUrl =
+        //   "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
+
+        let inrApiUrl = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${todayDate}/v1/currencies/usd.json`;
 
         let response = await fetch(inrApiUrl);
         let result = await response.json();
@@ -316,10 +328,6 @@
           let formattedDate = date.toLocaleDateString("en-US", options);
 
           dateDisplayer.innerText = formattedDate;
-
-          let converterInnerDateDisplyer =
-            document.querySelector(".updatedTime span");
-          converterInnerDateDisplyer.innerText = result.date;
         }
 
         //
