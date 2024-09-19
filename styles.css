@@ -32,7 +32,31 @@ label {
 .colorHighlight {
   color: var(--azul);
 }
-
+.errorDisplayerCnt {
+  position: fixed;
+  padding: 12px;
+  border-radius: 6px;
+  top: 0;
+  right: -12px;
+  z-index: 10;
+  visibility: hidden;
+  width: fit-content;
+  max-width: 50%;
+}
+.newErrorClass {
+  position: fixed;
+  background: red;
+  padding: 18px;
+  border-radius: 6px;
+  overflow: hidden;
+  right: 12px;
+  z-index: 10;
+  top: 12px;
+  transition: 0.3s ease;
+  visibility: visible;
+  width: fit-content;
+  max-width: 50%;
+}
 body {
   height: 100vh;
   font-family: var(--ffInter);
@@ -121,7 +145,14 @@ header {
   width: 33%;
   padding: 8px;
 }
-
+.inputISOCode {
+  position: absolute;
+  height: 50px;
+  min-width: 30px;
+  display: grid;
+  place-content: center;
+  transform: translate(0, 50%);
+}
 .inputContainer input[type="text"] {
   padding: 8px;
   border: none;
@@ -131,6 +162,7 @@ header {
   border-radius: 4px;
   border: 1px solid var(--borderColor);
   background: transparent;
+  padding-left: 26px;
 }
 .dropdownsContainer {
   display: flex;
@@ -162,6 +194,7 @@ header {
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 24px;
+  z-index: 1;
 }
 .selectedCurrFlag {
   height: 50px;
@@ -339,7 +372,8 @@ header {
   background: #fdfdfd;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 1px 1px 12px -8px, -1px -1px 12px -8px;
+  /* box-shadow: 1px 1px 12px -8px, -1px -1px 12px -8px; */
+  box-shadow: rgba(0, 17, 51, 0.17) 0px 3px 15px -3px;
 }
 .currenciesTableSection h3 {
   padding: 12px;
@@ -371,6 +405,21 @@ tr th {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
+  .errorDisplayerCnt {
+    right: unset;
+    width: 90%;
+    transform: translate(5%);
+    max-width: unset;
+  }
+  .newErrorClass {
+    right: unset;
+    width: 90%;
+    max-width: unset;
+    transform: translate(5%);
+    top: 12px;
+    padding: 14px !important;
+  }
+
   .currenciesTableSection {
     padding: 24px;
     overflow: auto;
@@ -383,11 +432,16 @@ tr th {
   .toCurrenciesTableContainer {
     scroll-snap-align: center;
     min-width: 90%;
+    border-radius: 10px;
+  }
+  .fromCurrenciesTableContainer table,
+  .toCurrenciesTableContainer table {
+    padding: 8px;
   }
   tr td,
   tr th {
-    padding: 6px;
-    font-size: 0.75em;
+    padding: 8px;
+    font-size: 0.85em;
   }
 
   .currencyConverterSection {
