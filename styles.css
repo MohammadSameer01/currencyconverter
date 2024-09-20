@@ -8,6 +8,7 @@
   --khaki: #afa98dff;
 
   --borderColor: #999;
+  --tableBorderColor: rgba(153, 153, 153, 0.15);
 
   --gradient1: rgba(0, 0, 0, 0.7);
   --gradient2: rgba(0, 0, 0, 0.9);
@@ -224,6 +225,10 @@ header {
   color: var(--gray);
   padding: 4px 0;
 }
+.lineBreak {
+  line-break: normal;
+  color: var(--gray);
+}
 .valueOfFromCurrency,
 .valueOfToCurrency {
   font-size: 0.9em;
@@ -370,7 +375,7 @@ header {
 .toCurrenciesTableContainer {
   width: 40%;
   background: #fdfdfd;
-  border-radius: 14px;
+  border-radius: 14px 14px 0 0;
   overflow: hidden;
   /* box-shadow: 1px 1px 12px -8px, -1px -1px 12px -8px; */
   box-shadow: rgba(0, 17, 51, 0.17) 0px 3px 15px -3px;
@@ -384,6 +389,7 @@ header {
   color: var(--themeText);
 }
 table {
+  border-collapse: collapse;
   width: 100%;
 }
 table tr {
@@ -401,6 +407,7 @@ tr th {
   padding: 12px;
   text-align: center;
   font-size: 1em;
+  border: 1px solid var(--tableBorderColor);
 }
 
 /* MEDIA QUERIES */
@@ -432,12 +439,13 @@ tr th {
   .toCurrenciesTableContainer {
     scroll-snap-align: center;
     min-width: 90%;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
   }
   .fromCurrenciesTableContainer table,
   .toCurrenciesTableContainer table {
     padding: 8px;
   }
+
   tr td,
   tr th {
     padding: 8px;
