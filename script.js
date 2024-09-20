@@ -101,8 +101,8 @@ const exchangeRate = async () => {
   }
 
   resultDisplayer.innerHTML = `
-  <div class='mainResult'><div class='resultsFontSmall'>${userInput} ${fromCurrencyNameInFull} = </div> 
-  ${finalResult} ${toCurrencyNameInFull}</div>
+  <div class='mainResult'><div class='resultsFontSmall'>${userInput} <span class='lineBreak'>${fromCurrencyNameInFull}</span>  = </div> 
+  ${finalResult} <span class='lineBreak'>${toCurrencyNameInFull}</span></div>
   <div class = 'valueOfFromCurrency'>1 ${fromCurrency.value} = ${rate} ${toCurrency.value}</div>
   <div  class = 'valueOfToCurrency'>1 ${toCurrency.value} = ${exchangeRateOfToCurrencytoFromCurrency} ${fromCurrency.value}</div>`;
 
