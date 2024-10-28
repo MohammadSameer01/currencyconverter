@@ -322,6 +322,8 @@ header {
   text-overflow: ellipsis;
   font-size: 0.75em;
   color: rgba(255, 255, 255, 0.75);
+
+  max-width: 140px;
 }
 .currencyRate div {
   font-size: 2em;
