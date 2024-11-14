@@ -22,6 +22,7 @@ for (select of dropdowns) {
     updateFlag(event.target);
     exchangeRate();
     isoCodeChanger();
+    navigator.vibrate(50)
   });
 }
 
