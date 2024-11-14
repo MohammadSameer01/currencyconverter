@@ -5,6 +5,12 @@ let toCurrency = document.querySelector("#toDropdown");
 let resultDisplayer = document.querySelector(".resultDisplayer");
 let errorDisplayerCnt = document.querySelector(".errorDisplayerCnt");
 
+convertButton.addEventListener('click', () => {
+  
+  navigator.vibrate(50);
+  
+});
+
 for (select of dropdowns) {
   for (currencyCode in countryList) {
     let option = document.createElement("option");
