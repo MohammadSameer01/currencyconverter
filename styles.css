@@ -28,8 +28,6 @@ li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  /* outline: 1px solid; */
 }
 body {
   font-family: var(--ffPoppins);
@@ -366,4 +364,10 @@ tr th {
 
   padding: 8px;
   font-size: 0.85em;
+}
+
+@media (min-width: 600px) {
+  * {
+    display: none;
+  }
 }
