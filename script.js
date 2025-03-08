@@ -107,6 +107,12 @@ async function apiFetchFunction() {
     }
 
     let responseJSON = await response.json();
+
+    if (responseJSON.usd) {
+      usdExchangeRate = responseJSON.usd;
+      dollarSectionBoxes();
+    }
+
     return responseJSON; // Return if successful
   } catch (e) {
     console.log("Error fetching yesterday's data:", e.message);
@@ -159,6 +165,9 @@ async function handleApiData() {
     convertButton.textContent = `Convert ${fromCurrency.toUpperCase()} to ${toCurrency.toUpperCase()}`;
     //
     //
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
   } else {
     console.log("No data received.");
   }
