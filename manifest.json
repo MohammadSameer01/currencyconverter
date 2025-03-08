@@ -4,7 +4,7 @@
   "description": "Convert currencies instantly with real-time exchange rates.",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#040f43",
+  "background_color": "#fff",
   "theme_color": "#040f43",
   "orientation": "portrait",
   "icons": [
