@@ -297,7 +297,7 @@ const currenciesArray = [
     code: "EUR",
     name: "Euro",
     country: "Eurozone",
-    countryCode: "FR",
+    countryCode: "EU",
     symbol: "€",
   }, // EU as a general code for Eurozone
   {
@@ -1128,4 +1128,4 @@ const currenciesArray = [
   },
 ];
 //
-let dollarRateArray = ["INR", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY"];
+let dollarRateArray = ["INR", "EUR", "JPY", "GBP", "CAD", "CHF", "AUD", "CNY"];
