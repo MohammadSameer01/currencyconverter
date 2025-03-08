@@ -1,0 +1,25 @@
+{
+  "name": "Currency Converter",
+  "short_name": "Currency Converter",
+  "description": "Convert currencies instantly with real-time exchange rates.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#040f43",
+  "theme_color": "#040f43",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/currency-globe-icon.png",
+      "sizes": "600x600",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/currency-globe-icon-whiteFill.png",
+      "sizes": "521x521",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr"
+}

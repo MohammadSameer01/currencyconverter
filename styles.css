@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*  */
+/*  */
+:root {
+  --ffPoppins: "Poppins", sans-serif;
+  --ffInter: "Inter", sans-serif;
+
+  --backgroundColor1: #040f43;
+  --backgroundColor2: #0a146e;
+  --textColor: #fff;
+  --textColorBlack: #000;
+  --azulColor: #016fb9ff;
+
+  --borderColor: #999;
+  --borderColor2: rgba(153, 153, 153, 0.15);
+  --gray: gray;
+}
+svg {
+  height: 28px;
+  fill: var(--textColor);
+}
+li {
+  list-style: none;
+}
+/*  */
+/*  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* outline: 1px solid; */
+}
+body {
+  font-family: var(--ffPoppins);
+  background: linear-gradient(var(--backgroundColor1), var(--backgroundColor2));
+  color: var(--textColor);
+}
+/*  */
+/*  */
+header {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+.logoContainer img {
+  height: 48px;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+/*  */
+/*  */
+.dollarRateSection {
+  padding: 12px;
+  position: sticky;
+  top: 65px;
+}
+.dollarRateContainer {
+  display: flex;
+  overflow-x: auto;
+  padding: 12px;
+}
+.oneDollarIconContainer {
+  height: 110px;
+  padding: 12px;
+  position: sticky;
+  left: 0;
+}
+.oneDollarIconContainer svg {
+  height: 100%;
+}
+._ToDollarContainer {
+  height: 116px;
+  aspect-ratio: 3/2;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  padding: 12px;
+  border-radius: 12px;
+
+  margin-right: 12px;
+  position: relative;
+}
+._ToDollarContainer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.currencyCode,
+.currencyName,
+.currencyCountry {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.75);
+}
+.currencySymbol {
+  height: fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-family: var(--ffInter);
+}
+.currencyValueToUSD {
+  font-size: 1.5em;
+}
+.dollarRateSectionParagraphCnt {
+  font-size: 0.7em;
+  padding: 6px;
+  width: 100%;
+}
+.dollarCntDate {
+  color: #90ee90;
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.converterSection {
+  background: var(--textColor);
+  border-radius: 36px 36px 0 0;
+  padding: 12px;
+  margin-top: 12px;
+  color: var(--textColorBlack);
+  font-family: var(--ffInter);
+
+  position: sticky;
+  z-index: 1;
+}
+.currencyConverter {
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.converterHeroTitle h2 {
+  font-weight: 750;
+}
+.bgClipText {
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    var(--backgroundColor1),
+    var(--azulColor) /*Azul Color*/,
+    #22aed1ff /*Pacific cyan*/
+  );
+  width: fit-content;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.inputContainer input[type="number"] {
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid var(--borderColor);
+  background: transparent;
+  padding-left: 26px;
+}
+.inputISOCode {
+  position: absolute;
+  top: 34%;
+  height: 50px;
+  min-width: 30px;
+  display: grid;
+  place-content: center;
+}
+.currencyConverter label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.dropdownsContainer {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.dropdownCnt {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 50%;
+
+  overflow: hidden;
+}
+
+.selectedCurrFlag {
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  padding: 4px;
+  transform: translate(6px, 26px);
+}
+
+.dropdownCnt select {
+  border: none;
+  outline: none;
+  font-family: var(--ffInter);
+  font-size: 1em;
+  padding: 8px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid var(--borderColor);
+  padding-left: 55px;
+  cursor: pointer;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* background-image: url(assets/dropDownIcon.png); */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 24px;
+  z-index: 1;
+}
+/*  */
+/*  */
+
+.resultDisplayer {
+  padding: 2px;
+  border-radius: 6px;
+  font-size: 1em;
+  min-height: 50px;
+  align-content: center;
+
+  padding-bottom: 36px;
+}
+.mainResult {
+  font-size: 2.5em;
+  line-break: anywhere;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.resultsFontSmall {
+  font-size: 0.4em;
+  color: var(--gray);
+  padding: 4px 0;
+}
+.lineBreak {
+  line-break: normal;
+  color: var(--gray);
+}
+.valueOfFromCurrency,
+.valueOfToCurrency {
+  font-size: 0.8em;
+  color: var(--gray);
+  padding: 2px;
+}
+/*  */
+.convertButton {
+  border: 0;
+  font-family: var(--ffInter);
+  padding: 16px 12px;
+  font-size: 1em;
+  min-width: 160px;
+  max-width: fit-content;
+  white-space: nowrap;
+  background: var(--azulColor);
+  border-radius: 12px;
+  color: var(--textColor);
+  cursor: pointer;
+  position: sticky;
+  bottom: 8px;
+  margin: auto;
+}
+.updatedTime {
+  position: absolute;
+  right: 24px;
+  margin-top: 12px;
+  font-size: 0.75em;
+  color: var(--borderColor);
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3----SECTION3---- */
+.currenciesTableSection {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  background: var(--textColor);
+  color: var(--textColorBlack);
+
+  padding: 24px;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  justify-content: unset;
+  gap: 24px;
+}
+.fromCurrenciesTableContainer,
+.toCurrenciesTableContainer {
+  background: #fdfdfd;
+  overflow: hidden;
+
+  scroll-snap-align: center;
+  min-width: 90%;
+  border-radius: 10px 10px 0 0;
+}
+.currenciesTableSection h3 {
+  padding: 12px;
+  text-align: center;
+  font-weight: 400;
+  position: relative;
+  background: var(--backgroundColor1);
+  color: var(--textColor);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 8px;
+}
+table tr {
+  width: 100%;
+}
+table td:first-child {
+  color: var(--azulColor);
+}
+th {
+  font-weight: 600;
+}
+tr td,
+tr th {
+  text-align: center;
+  border: 1px solid var(--borderColor2);
+
+  padding: 8px;
+  font-size: 0.85em;
+}
