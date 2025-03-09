@@ -209,6 +209,12 @@ function updateValuesOfElements(exchangeRate, formattedDisplayDate) {
   valueOfToCurrency.innerHTML = `1 ${toCurrency.toUpperCase()} = ${fromToToCurrER} ${fromCurrency.toUpperCase()}`;
   //
   //
+  let inputISOCode = document.querySelector(".inputISOCode");
+  inputISOCode.textContent = fromCountryArray.symbol;
+  let inputEle = document.querySelector("#userInput");
+  inputEle.style.paddingLeft = `${inputISOCode.clientWidth}px`;
+  //
+  //
   updatedTimeElement.textContent = formattedDisplayDate;
 }
 convertButton.addEventListener("click", handleApiData);
@@ -388,4 +394,23 @@ document.addEventListener("scroll", function () {
   } else {
     metaThemeTag.setAttribute("content", "#040f43"); // Default color (change as needed)
   }
+});
+
+// code to auto run the handleApiData when user type
+let userInput = document.querySelector("#userInput");
+let typingTimer;
+userInput.addEventListener("input", () => {
+  clearTimeout(typingTimer);
+
+  if (userInput.value.trim() !== "") {
+    typingTimer = setTimeout(() => {
+      handleApiData();
+    }, 600);
+  }
+});
+// to move to input to top on page on focus
+userInput.addEventListener("focus", () => {
+  let offset = 36; // Distance from the top
+  let elementTop = userInput.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top: elementTop - offset, behavior: "smooth" });
 });
