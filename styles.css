@@ -65,6 +65,9 @@ header {
   overflow-x: auto;
   padding: 12px;
 }
+.dollarRateContainer::-webkit-scrollbar {
+  display: none;
+}
 .oneDollarIconContainer {
   height: 110px;
   padding: 12px;
@@ -86,6 +89,7 @@ header {
 
   margin-right: 12px;
   position: relative;
+  cursor: pointer;
 }
 ._ToDollarContainer ul {
   display: flex;
@@ -98,6 +102,7 @@ header {
 .currencyCountry {
   font-size: 0.75em;
   color: rgba(255, 255, 255, 0.75);
+  text-wrap: nowrap;
 }
 .currencySymbol {
   height: fit-content;
@@ -191,7 +196,7 @@ header {
   padding-left: 26px;
   font-size: 1.5em;
   font-weight: 500;
-} 
+}
 .inputISOCode {
   position: absolute;
   top: 36%;
@@ -266,6 +271,12 @@ header {
   align-content: center;
 
   padding-bottom: 36px;
+}
+.resultDisplayerError {
+  font-size: 0;
+  padding: 0;
+  min-height: 0;
+  transition: all 0.3s ease, font-size 0s ease;
 }
 .mainResult {
   font-size: 2.5em;
@@ -342,6 +353,7 @@ header {
   scroll-snap-align: center;
   min-width: 90%;
   border-radius: 10px 10px 0 0;
+  cursor: pointer;
 }
 .currenciesTableSection h3 {
   padding: 12px;
@@ -376,7 +388,14 @@ tr th {
 }
 
 @media (min-width: 600px) {
-  * {
+  .converterSection,
+  .currenciesTableSection {
+    max-width: 600px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 932px) and (orientation: landscape) {
+  .dollarRateSection {
     display: none;
   }
 }
